@@ -1,7 +1,17 @@
 <?php
 
+$host = "localhost"; 
+$user="root";
+$password = "DBAdmin";
+$dbname="CSIS2440";
+$con = new mysqli($host,$user,$password,$dbname)
+        or die('could not connect to the database server.'.mysqli_connect_error($con));
 
-$conndb = new mysqli($host, $user, $password, $dbname)
-	or die ('Could not connect to the database server' . mysqli_connect_error());
+if($con->connect_error == FALSE){
+    echo"<h2> DataBase Connected</h2>";
+}else{
+        echo $con->connect_error;
+        
+    }
 
-//$con->close();
+?>
